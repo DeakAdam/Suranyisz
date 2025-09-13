@@ -4,101 +4,174 @@
     {
         static void F1()
         {
+            Console.WriteLine("Feladat 1: Hello world kiírása");
             Console.WriteLine("Hello world!");
         }
-
         static void F2()
         {
+            Console.WriteLine("Feladat 2: Név bekérése és üdvözlés");
             Console.Write("Add meg a neved: ");
-            string nev = Console.ReadLine();
-            Console.WriteLine($"Szia {nev}");
+            string felhasznaloNev = Console.ReadLine();
+            Console.WriteLine($"Szia {felhasznaloNev}!");
         }
-
         static void F3()
         {
-            Console.Write("Adj meg egy számot: ");
-            int szam = int.Parse(Console.ReadLine());
-            Console.WriteLine(szam * 2);
+            Console.WriteLine("Feladat 3: Szám duplázása");
+            Console.Write("Adj meg egy egész számot: ");
+            int eredetiSzam = int.Parse(Console.ReadLine());
+            Console.WriteLine($"A megadott szám kétszerese: {eredetiSzam * 2}");
         }
 
         static void F4()
         {
-            Console.Write("Adj meg egy számot: ");
-            int beolv_szam1 = int.Parse(Console.ReadLine());
-            Console.Write("Adj meg egy másik számot: ");
-            int beolv_szam2 = int.Parse(Console.ReadLine());
+            Console.WriteLine("Feladat 4: Két szám műveletei");
+            Console.Write("Add meg az első számot: ");
+            int elsoSzam = int.Parse(Console.ReadLine());
+            Console.Write("Add meg a második számot: ");
+            int masodikSzam = int.Parse(Console.ReadLine());
 
-            Console.WriteLine($"Összegük: {beolv_szam1 + beolv_szam2}");
-            Console.WriteLine($"Különbségük: {beolv_szam1 - beolv_szam2}");
-            Console.WriteLine($"Szorzatuk: {beolv_szam1 * beolv_szam2}");
-
-            if (beolv_szam2 != 0 && beolv_szam1 >= beolv_szam2)
+            Console.WriteLine($"Összeg: {elsoSzam + masodikSzam}");
+            Console.WriteLine($"Különbség: {elsoSzam - masodikSzam}");
+            Console.WriteLine($"Szorzat: {elsoSzam * masodikSzam}");
+            if (masodikSzam != 0)
             {
-                Console.WriteLine($"Hányados: {beolv_szam1 / beolv_szam2}");
+                Console.WriteLine($"Hányados: {elsoSzam / masodikSzam}");
             }
             else
             {
-                Console.WriteLine("A művelet nem lehetséges");
+                Console.WriteLine("Nullával nem lehet osztani!");
             }
         }
-
         static void F5()
         {
-            Console.Write("Adj meg egy számot: ");
-            int szam1 = int.Parse(Console.ReadLine());
-            Console.Write("Adj meg egy másik számot: ");
-            int szam2 = int.Parse(Console.ReadLine());
+            Console.WriteLine("Feladat 5: Két szám közül a nagyobbik meghatározása");
+            Console.Write("Add meg az első számot: ");
+            int elsoSzam = int.Parse(Console.ReadLine());
+            Console.Write("Add meg a második számot: ");
+            int masodikSzam = int.Parse(Console.ReadLine());
 
-            if (szam1 > szam2)
+            if (elsoSzam > masodikSzam)
             {
-                Console.WriteLine($"A nagyobbik szám: {szam1}");
+                Console.WriteLine($"A nagyobbik szám: {elsoSzam}");
             }
-            else if (szam2 > szam1)
+            else if (masodikSzam > elsoSzam)
             {
-                Console.WriteLine($"A nagyobbik szám: {szam2}");
+                Console.WriteLine($"A nagyobbik szám: {masodikSzam}");
             }
             else
             {
-                Console.WriteLine("A két szám egyenlő");
+                Console.WriteLine("A két szám egyenlő.");
             }
         }
 
         static void F6()
         {
-            Console.Write("Adj meg egy számot: ");
-            int szam1 = int.Parse(Console.ReadLine());
-            Console.Write("Adj meg egy másik számot: ");
-            int szam2 = int.Parse(Console.ReadLine());
-            Console.Write("Adj meg egy harmadik számot: ");
-            int szam3 = int.Parse(Console.ReadLine());
+            Console.WriteLine("Feladat 6: Három szám közül a legkisebb meghatározása");
+            Console.Write("add meg az első számot: ");
+            int elsoSzam =int.Parse(Console.ReadLine());
+            Console.Write("Add meg a második számot: ");
+            int masodikSzam =int.Parse(Console.ReadLine());
+            Console.Write("Add meg a harmadik számot: ");
+            int harmadikSzam =int.Parse(Console.ReadLine());
 
-            int legkissebb = szam1;
+            int legkisebb = elsoSzam;
 
-            if (szam2 < legkissebb) legkissebb = szam2;
-            if (szam3 < legkissebb) legkissebb = szam3;
+            if (masodikSzam <legkisebb)legkisebb =masodikSzam;
+            if (harmadikSzam <legkisebb)legkisebb =harmadikSzam;
 
-            Console.WriteLine($"A legkisebb szám: {legkissebb}");
+            Console.WriteLine($"A legkisebb szám: {legkisebb}");
         }
-
         static void F7()
         {
+            Console.WriteLine("Feladat 7: Háromszög szerkeszthetőségének vizsgálata");
             Console.Write("Add meg az első oldalt: ");
             int oldal1 = int.Parse(Console.ReadLine());
             Console.Write("Add meg a második oldalt: ");
             int oldal2 = int.Parse(Console.ReadLine());
-            Console.Write("Add meg a harmadik oldalt: ");
+            Console.Write("Add meg a hamradik oldalt: ");
             int oldal3 = int.Parse(Console.ReadLine());
 
-            if (oldal1 + oldal2 > oldal3 &&
-                oldal1 + oldal3 > oldal2 &&
-                oldal2 + oldal3 > oldal1)
+            if (oldal1+oldal2>oldal3&&oldal1+oldal3>oldal2&&oldal2+oldal3>oldal1)
             {
-                Console.WriteLine("A háromszög szerkeszthető.");
+                Console.WriteLine("A háromszög szerkeszthető");
             }
             else
             {
-                Console.WriteLine("A háromszög nem szerkeszthető.");
+                Console.WriteLine("A háromszög nem szerkeszthető");
             }
+        }
+        static void F8()
+        {
+            Console.WriteLine("Feladat 8: Két szám számtani és mértani közepe");
+            Console.Write("Add meg az első számot: ");
+            int elsoszam=int.Parse(Console.ReadLine());
+            Console.Write("Add meg a második számot: ");
+            int masodikszam= int.Parse(Console.ReadLine());
+
+            Console.WriteLine($"A két szám számtani közepe: {(elsoszam+masodikszam)/2}, mértani közepe: {Math.Sqrt(elsoszam*masodikszam)}") ;
+        }
+
+        static void F9()
+        {
+            Console.Write("Add meg az a értékét: ");
+            int a = int.Parse(Console.ReadLine());
+            Console.Write("Add meg a b értékét: ");
+            int b = int.Parse(Console.ReadLine());
+            Console.Write("Add meg a c értékét: ");
+            int c = int.Parse(Console.ReadLine());
+            int diszkriminans= b * b - 4 * a * c;
+
+            if (diszkriminans> 0 && diszkriminans==0)
+            {
+                Console.WriteLine("Van megolds.");
+            }
+            else
+            {
+                Console.WriteLine("Nincs megoldás.");
+            }
+        }
+        
+        static void F10()
+        {
+            Console.Write("Add meg az a értékét: ");
+            double a = double.Parse(Console.ReadLine());
+            Console.Write("Add meg a b értékét: ");
+            double b = double.Parse(Console.ReadLine());
+            Console.Write("Add meg a c értékét: ");
+            double c = double.Parse(Console.ReadLine());
+
+            double diszkriminans = b * b - 4 * a * c;
+
+            if (diszkriminans > 0)
+            {
+                double x1 = (-b + Math.Sqrt(diszkriminans))/ (2 * a);
+                double x2 = (-b - Math.Sqrt(diszkriminans))/ (2 * a);
+                Console.WriteLine(x1);
+                Console.WriteLine(x2);
+            }
+            else if (diszkriminans == 0)
+            {
+                double x = -b / (2 * a);
+                Console.WriteLine(x);
+            }
+            else
+            {
+                Console.WriteLine("Nincs megoldás");
+            }
+        }
+        static void F11()
+        {
+            Console.Write("Add meg az egyik befogót: ");
+            double befogo1= double.Parse(Console.ReadLine());
+            Console.Write("Add meg a másik befogót: ");
+            double befogo2= double.Parse(Console.ReadLine());
+            double atfogo= Math.Sqrt(befogo1 * befogo1 + befogo2 * befogo2);
+
+            Console.WriteLine($"Az átfogó hossza: {atfogo:F2}");
+        }
+        static void F12()
+        {
+
         }
 
         static void Main(string[] args)
@@ -110,6 +183,11 @@
             F5();
             F6();
             F7();
+            F8();
+            F9();
+            F10();
+            F11();
+            F12();
         }
     }
 }
