@@ -4,19 +4,16 @@
     {
         static void F1()
         {
-            Console.WriteLine("Feladat 1: Hello world kiírása");
             Console.WriteLine("Hello world!");
         }
         static void F2()
         {
-            Console.WriteLine("Feladat 2: Név bekérése és üdvözlés");
             Console.Write("Add meg a neved: ");
             string felhasznaloNev = Console.ReadLine();
             Console.WriteLine($"Szia {felhasznaloNev}!");
         }
         static void F3()
         {
-            Console.WriteLine("Feladat 3: Szám duplázása");
             Console.Write("Adj meg egy egész számot: ");
             int eredetiSzam = int.Parse(Console.ReadLine());
             Console.WriteLine($"A megadott szám kétszerese: {eredetiSzam * 2}");
@@ -24,7 +21,6 @@
 
         static void F4()
         {
-            Console.WriteLine("Feladat 4: Két szám műveletei");
             Console.Write("Add meg az első számot: ");
             int elsoSzam = int.Parse(Console.ReadLine());
             Console.Write("Add meg a második számot: ");
@@ -44,7 +40,6 @@
         }
         static void F5()
         {
-            Console.WriteLine("Feladat 5: Két szám közül a nagyobbik meghatározása");
             Console.Write("Add meg az első számot: ");
             int elsoSzam = int.Parse(Console.ReadLine());
             Console.Write("Add meg a második számot: ");
@@ -66,7 +61,6 @@
 
         static void F6()
         {
-            Console.WriteLine("Feladat 6: Három szám közül a legkisebb meghatározása");
             Console.Write("add meg az első számot: ");
             int elsoSzam =int.Parse(Console.ReadLine());
             Console.Write("Add meg a második számot: ");
@@ -83,7 +77,6 @@
         }
         static void F7()
         {
-            Console.WriteLine("Feladat 7: Háromszög szerkeszthetőségének vizsgálata");
             Console.Write("Add meg az első oldalt: ");
             int oldal1 = int.Parse(Console.ReadLine());
             Console.Write("Add meg a második oldalt: ");
@@ -102,7 +95,7 @@
         }
         static void F8()
         {
-            Console.WriteLine("Feladat 8: Két szám számtani és mértani közepe");
+         
             Console.Write("Add meg az első számot: ");
             int elsoszam=int.Parse(Console.ReadLine());
             Console.Write("Add meg a második számot: ");
@@ -171,9 +164,39 @@
         }
         static void F12()
         {
+            Console.Write("Add meg az egyik él hosszát: ");
+            double a=double.Parse(Console.ReadLine());
+            Console.Write("Add meg a második él hosszát: ");
+            double b = double.Parse(Console.ReadLine());
+            Console.Write("Add meg a harmadik él hosszát: ");
+            double c = double.Parse(Console.ReadLine());
+            double felszin=2*(a*b+a*c+b*c);
+            double terfogat=a*b*c;
+            Console.WriteLine($"A téglatest térfogat: {terfogat} cm a felszíne: {felszin} cm");
+
 
         }
 
+        static void F13()
+        {
+            Console.Write("Add meg a kör sugarát: ");
+            double r=double.Parse(Console.ReadLine());
+            double terulet=(r*r)*Math.PI/;
+            double kerulet=2*Math.PI*r;
+            Console.WriteLine($"A kör területe: {terulet} cm a kerülete: {kerulet} cm");
+        }
+
+        static void F14()
+        {
+            Console.Write("Add meg a körív sugarát: ");
+            double r = double.Parse(Console.ReadLine());
+            Console.Write("Add meg a körív közééponti szögét: ");
+            double alpha= double.Parse(Console.ReadLine());
+            double alphaRad = alpha * Math.PI / 180;
+            double ivHossz = r * alphaRad;
+            double terulet = (r * r * alphaRad) / 2;
+            Console.WriteLine($"Határoló ív hossza: {ivHossz} cm körív területe: {terulet} cm");
+        }
         static void Main(string[] args)
         {
             F1();
@@ -188,6 +211,8 @@
             F10();
             F11();
             F12();
+            F13();
+            F14();
         }
     }
 }
