@@ -1,4 +1,6 @@
-﻿namespace Suranyisz
+﻿using System.ComponentModel;
+
+namespace Suranyisz
 {
     internal class Program
     {
@@ -181,7 +183,7 @@
         {
             Console.Write("Add meg a kör sugarát: ");
             double r=double.Parse(Console.ReadLine());
-            double terulet=(r*r)*Math.PI/;
+            double terulet=(r*r)*Math.PI;
             double kerulet=2*Math.PI*r;
             Console.WriteLine($"A kör területe: {terulet} cm a kerülete: {kerulet} cm");
         }
@@ -197,8 +199,208 @@
             double terulet = (r * r * alphaRad) / 2;
             Console.WriteLine($"Határoló ív hossza: {ivHossz} cm körív területe: {terulet} cm");
         }
-        static void Main(string[] args)
+        static void F15()
         {
+            Console.Write("Adj megy egy számot: ");
+            int szam= int.Parse(Console.ReadLine());
+
+            for(int i = 0; i <=szam; i++)
+            {
+                Console.Write(i);
+                if(i<szam)
+                {
+                    Console.Write(" ");
+                }
+            }
+        }
+
+        static void F16()
+        {
+            Console.Write("Adj megy egy számot: ");
+            int szam = int.Parse(Console.ReadLine());
+
+            for (int i = 0; i <= szam; i++)
+            {
+                Console.WriteLine(i);
+                
+            }
+
+        }
+
+        static void F17()
+        {
+            Console.Write("Adj megy egy számot: ");
+            int szam = int.Parse(Console.ReadLine());
+            Console.WriteLine($"A {szam} ósztói:");
+
+            for (int i = 1; i < szam; i++)
+            {
+                
+                if (szam % i==0)
+                {
+                    Console.Write(i + " ");
+                }
+
+            }
+        }
+        static void F18()
+        {
+            Console.Write("Adj megy egy számot: ");
+            int szam = int.Parse(Console.ReadLine());
+            Console.WriteLine($"A {szam} ósztóinak összege:");
+
+            for (int i = 1; i < szam; i++)
+            {
+
+                if (szam % i == 0)
+                {
+                    Console.Write(szam+=i);
+                }
+
+            }
+        }
+
+        static void F19()
+        {
+            Console.Write("Adj meg egy számot: ");
+            int szam = int.Parse(Console.ReadLine());
+            int osszeg = 0;
+
+            
+            for (int i = 1; i < szam; i++)
+            {
+                if (szam % i == 0)
+                {
+                    osszeg += i;
+                }
+            }
+
+            if (osszeg == szam)
+            {
+                Console.WriteLine("Ez egy tökéletes szám");
+            }
+            else
+            {
+                Console.WriteLine("Ez nem egy tökéletes szám");
+            }
+        }
+        static void F20()
+        {
+            Console.Write("Add meg a hatványalapot: ");
+            int hatvanyalap = int.Parse(Console.ReadLine());
+            Console.Write("Add meg a hatvány kitebőjét: ");
+            int hatvanykitevo = int.Parse(Console.ReadLine());
+            int hatvanyertek = 1;
+            for (int i = 1; i <= hatvanykitevo; i++)
+            {
+                hatvanyertek *= hatvanyalap;
+            }
+
+            Console.WriteLine("Hatványérték: " + hatvanyertek);
+        }
+        
+        static void F21()
+        {
+            int szam;
+
+            do
+            {
+                Console.Write("Adj meg egy pozitív számot: ");
+                szam = int.Parse(Console.ReadLine());
+
+                if (szam <= 0)
+                {
+                    Console.WriteLine("Hiba: csak pozitív számot adhatsz meg!");
+                }
+
+            } while (szam <= 0);
+
+            Console.WriteLine($"A megadott szám: {szam}");
+        }
+        static void F22()
+        {
+            int szam;
+            do
+            {
+                Console.Write("Adj meg 10-nél kissebb számokat: ");
+                szam = int.Parse(Console.ReadLine());
+
+
+            } while (szam < 10);
+            Console.WriteLine("A szám nagyobb volt mint 10");
+        }
+
+        static void F23()
+        {
+            Console.Write("Adj meg egy számot: ");
+            int szam = int.Parse(Console.ReadLine());
+
+            int eredeti = szam;
+            string felbontas = "";
+
+            
+            while (szam % 2 == 0)
+            {
+                felbontas += "2*";
+                szam /= 2;
+            }
+
+            
+            felbontas += szam;
+
+            Console.WriteLine($"{eredeti} = {felbontas}");
+        }
+        static void F24()
+        {
+            Console.WriteLine("Kérlek, írd be az 'alma' szót:");
+
+            string input = Console.ReadLine();
+
+            if (input == "alma")
+            {
+                Console.WriteLine("Az alma gyümölcs!");
+            }
+            else
+            {
+                Console.WriteLine("Nem az 'alma' szót írtad be.");
+            }
+        }
+
+        static void F25()
+        {
+            Console.Write("Adj meg egy számot: ");
+            int szam = int.Parse(Console.ReadLine());
+            int eredmeny = szam;
+
+            int hanyados = 0;
+            while (eredmeny >= 3)
+            {
+                eredmeny -= 3;
+                hanyados++;
+            }
+
+            Console.WriteLine($"{szam} = {hanyados}*3 + {eredmeny}");
+        }
+        static void F30()
+        {
+            Console.Write("Első szám: ");
+            int a = int.Parse(Console.ReadLine());
+
+            Console.Write("Második szám: ");
+            int b = int.Parse(Console.ReadLine());
+
+            while (b > 0)
+            {
+                int t = b;
+                b = a % b;
+                a = t;
+            }
+
+            Console.WriteLine("LNKO: " + a);
+        }
+
+            static void Main(string[] args)
+        {/*
             F1();
             F2();
             F3();
@@ -213,6 +415,20 @@
             F12();
             F13();
             F14();
+            F15();
+            F16();
+            F17();
+            F18();
+            F19();
+            F20();
+            F21();
+            F22();
+            F23();
+            F24();
+            F25();
+            F30();*/
+            F31();
+
         }
     }
 }
