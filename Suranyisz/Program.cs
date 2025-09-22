@@ -516,9 +516,108 @@ namespace Suranyisz
             Console.WriteLine($"A {x}-nak/nek és a {y}-nak/nek a legnagyobb közös osztója a(z) {a}");
         }
 
+        static void F32()
+        {
+            Console.Write("Adj meg egy számot: ");
+            int szam = int.Parse(Console.ReadLine());
+            Console.Write($"{szam} szorzótáblája:");
+
+            for (int i = 1; i <= 10; i++)
+            {
+                Console.Write($"{szam*i},");
+            }
+
+        }
+
+        static void F33()
+        {
+            Console.Write("Adj meg egy számot: ");
+            int szam = int.Parse(Console.ReadLine());
+            Console.Write($"{szam} összegtáblája:");
+            for (int i = 0; i <= 10; i++)
+            {
+                Console.Write($"{(szam +=i)},");
+            }
+        }
+        static void F34()
+        {
+            Console.Write("Add meg az első kétjegyű számot: ");
+            int elsoSzam = int.Parse(Console.ReadLine());
+
+            Console.Write("Add meg a második kétjegyű számot: ");
+            int masodikSzam = int.Parse(Console.ReadLine());
+            int elsoTizes = elsoSzam / 10;
+            int elsoEgyes = elsoSzam % 10;
+            int masodikTizes = masodikSzam / 10;
+            int masodikEgyes = masodikSzam % 10;
+            int elsoFelcserelt = elsoEgyes * 10 + elsoTizes;
+            int masodikFelcserelt = masodikEgyes * 10 + masodikTizes;
+            if (elsoSzam * masodikSzam == elsoFelcserelt * masodikFelcserelt)
+            {
+                Console.WriteLine($"Speciális pár: {elsoSzam} és {masodikSzam} -> " +
+                                  $"{elsoSzam}*{masodikSzam} = " +
+                                  $"{elsoFelcserelt}*{masodikFelcserelt} = " +
+                                  $"{elsoSzam * masodikSzam}");
+            }
+            else
+            {
+                Console.WriteLine($"{elsoSzam} és {masodikSzam} nem alkot speciális párt.");
+            }
+        }
+
+        static void F35()
+        {
+            char[] kisbetuk = new char[26];
+            for (int i = 0; i < 26; i++)
+            {
+                kisbetuk[i] = (char)('a' + i);
+            }
+            int oszlopokSzama = 3;
+            int sorokSzama = (int)Math.Ceiling(kisbetuk.Length / (double)oszlopokSzama);
+            for (int sorIndex = 0; sorIndex < sorokSzama; sorIndex++)
+            {
+                for (int oszlopIndex = 0; oszlopIndex < oszlopokSzama; oszlopIndex++)
+                {
+                    int betuIndex = sorIndex + oszlopIndex * sorokSzama;
+                    if (betuIndex < kisbetuk.Length)
+                    {
+                        char aktualisBetu = kisbetuk[betuIndex];
+                        Console.Write($"{aktualisBetu} = {(int)aktualisBetu} ,");
+                    }
+                }
+                Console.WriteLine();
+            }
+        }
+
+        static void F36()
+        {
+            Console.Write("Add meg a sorok számát: ");
+            int sorokSzama = int.Parse(Console.ReadLine());
+
+            Console.Write("Add meg az oszlopok számát: ");
+            int oszlopokSzama = int.Parse(Console.ReadLine());
+
+            for (int sorIndex = 0; sorIndex < sorokSzama; sorIndex++)
+            {
+                for (int oszlopIndex = 0; oszlopIndex < oszlopokSzama; oszlopIndex++)
+                {
+                    if ((sorIndex + oszlopIndex) % 2 == 0)
+                    {
+                        Console.Write("X");
+                    }
+                    else
+                    {
+                        Console.Write("O");
+                    }
+                }
+                Console.WriteLine();
+            }
+        }
+        
+
         static void Main(string[] args)
         {
-            F31();
+            F36(); 
         }
     }
 }
