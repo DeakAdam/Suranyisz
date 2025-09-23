@@ -565,29 +565,6 @@ namespace Suranyisz
             }
         }
 
-        static void F35()
-        {
-            char[] kisbetuk = new char[26];
-            for (int i = 0; i < 26; i++)
-            {
-                kisbetuk[i] = (char)('a' + i);
-            }
-            int oszlopokSzama = 3;
-            int sorokSzama = (int)Math.Ceiling(kisbetuk.Length / (double)oszlopokSzama);
-            for (int sorIndex = 0; sorIndex < sorokSzama; sorIndex++)
-            {
-                for (int oszlopIndex = 0; oszlopIndex < oszlopokSzama; oszlopIndex++)
-                {
-                    int betuIndex = sorIndex + oszlopIndex * sorokSzama;
-                    if (betuIndex < kisbetuk.Length)
-                    {
-                        char aktualisBetu = kisbetuk[betuIndex];
-                        Console.Write($"{aktualisBetu} = {(int)aktualisBetu} ,");
-                    }
-                }
-                Console.WriteLine();
-            }
-        }
 
         static void F36()
         {
@@ -597,11 +574,11 @@ namespace Suranyisz
             Console.Write("Add meg az oszlopok számát: ");
             int oszlopokSzama = int.Parse(Console.ReadLine());
 
-            for (int sorIndex = 0; sorIndex < sorokSzama; sorIndex++)
+            for (int i = 0; i < sorokSzama; i++)
             {
-                for (int oszlopIndex = 0; oszlopIndex < oszlopokSzama; oszlopIndex++)
+                for (int j = 0; j < oszlopokSzama; j++)
                 {
-                    if ((sorIndex + oszlopIndex) % 2 == 0)
+                    if ((i + j) % 2 == 0)
                     {
                         Console.Write("X");
                     }
@@ -613,11 +590,50 @@ namespace Suranyisz
                 Console.WriteLine();
             }
         }
-        
+
+        static void F37()
+        {
+            Console.Write("Adj meg egy számot: ");
+            int szam = int.Parse(Console.ReadLine());
+
+            for (int i=1; i <= szam; i++)
+            {
+                for(int j=1; j <= i; j++)
+                {
+                    Console.Write("*");
+                }
+                Console.WriteLine();
+            }
+        }
+
+        static void F40()
+        {
+            Console.Write("Adj meg egy számot: ");
+            int szam = int.Parse(Console.ReadLine());
+
+            for (int i = 1; i <= szam; i++)
+            {
+                int osszeg = 0;
+
+                for (int j = 1; j < i; j++)
+                {
+                    if (i % j == 0)
+                    {
+                        osszeg += j;
+                    }
+                }
+
+                if (osszeg == i)
+                {
+                    Console.Write($"{i}, ");
+                }
+            }
+        }
+
 
         static void Main(string[] args)
         {
-            F36(); 
+            F40(); 
         }
     }
 }
