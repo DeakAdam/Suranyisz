@@ -1,4 +1,8 @@
 ﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+using System.Diagnostics;
+using System.Net.WebSockets;
+using System.Security;
 
 namespace Suranyisz
 {
@@ -630,10 +634,175 @@ namespace Suranyisz
             }
         }
 
+        static void F42()
+        {
+            Console.WriteLine("Add meg a tömb hosszát:");
+            int db=int.Parse(Console.ReadLine());
+            int[] tomb= new int[db];
+            int paratlanDarab = 0;
+            for (int i=0; i<tomb.Length; i++)
+            {
+                Console.WriteLine("Adj meg egy számot: ");
+                tomb[i] = int.Parse(Console.ReadLine());
+            }
+            for (int i=0;i<tomb.Length; i++)
+            {
+                if(tomb[i] %2!= 0)
+                {
+                    paratlanDarab++;
+                }
+            }
+            Console.WriteLine(paratlanDarab);
+        }
 
+        static void F43()
+        {
+            Console.WriteLine("Add meg a tömb hosszát:");
+            int db = int.Parse(Console.ReadLine());
+            int[] tomb = new int[db];
+            int osszeg = 0;
+            for (int i = 0; i < tomb.Length; i++)
+            {
+                Console.WriteLine("Adj meg egy számot: ");
+                tomb[i] = int.Parse(Console.ReadLine());
+            }
+            for(int i=0;i<tomb.Length ; i++)
+            {
+                osszeg += tomb[i];
+            }
+            Console.WriteLine(osszeg);
+
+        }
+
+        static void F44()
+        {
+            Console.WriteLine("Add meg a tömb hosszát:");
+            int db = int.Parse(Console.ReadLine());
+            int[] tomb = new int[db];
+            for (int i = 0; i < tomb.Length; i++)
+            {
+                Console.WriteLine("Adj meg egy számot: ");
+                tomb[i] = int.Parse(Console.ReadLine());
+            }
+            for (int i = 0; i < tomb.Length; i++)
+            {
+                if (tomb[i] % 2 == 0)
+                {
+                    Console.WriteLine($"Index: {i},");
+                }
+            }
+        }
+
+        static void F45()
+        {
+            Console.WriteLine("Add meg a tömb hosszát:");
+            int db = int.Parse(Console.ReadLine());
+            int[] tomb = new int[db];
+            for (int i = 0; i < tomb.Length; i++)
+            {
+                Console.WriteLine("Adj meg egy számot: ");
+                tomb[i] = int.Parse(Console.ReadLine());
+            }
+            Console.WriteLine("Adj meg egy számot amit keresel: ");
+            int keresettSzam=int.Parse(Console.ReadLine());
+            bool megtalta=false;
+            for (int i = 0;i < tomb.Length; i++)
+            {
+                if(keresettSzam==tomb[i])
+                {
+                    Console.WriteLine($"A keresett szám indexe: {i}");
+                    megtalta = true;
+
+                }
+                if (!megtalta)
+                {
+                    Console.WriteLine("A keresett szám nincs a tömben");
+                }
+            }
+        }
+
+        static void F46()
+        {
+            Console.WriteLine("Add meg a tömb hosszát:");
+            int db = int.Parse(Console.ReadLine());
+            int[] tomb = new int[db];
+            for (int i = 0; i < tomb.Length; i++)
+            {
+                Console.WriteLine("Adj meg egy számot: ");
+                tomb[i] = int.Parse(Console.ReadLine());
+            }
+            Console.WriteLine("Adj meg egy számot amit keresel: ");
+            int keresettSzam = int.Parse(Console.ReadLine());
+            int keresettDb = 0;
+            for (int i = 0;i<tomb.Length ; i++)
+            {
+                if(keresettSzam ==tomb[i])
+                {
+                    keresettDb++;
+                }
+            }
+            Console.WriteLine($"A keresett szám: {keresettDb} -szer/szor van meg a tömben");
+
+        }
+
+        static void F47()
+        {
+            Console.WriteLine("Add meg a tömb hosszát:");
+            int db = int.Parse(Console.ReadLine());
+            string []tomb = new string[db];
+            for (int i = 0; i < tomb.Length; i++)
+            {
+                Console.WriteLine("Add meg a tanulók neveit: ");
+                tomb[i] = Console.ReadLine();
+            }
+            Console.WriteLine("Add meg a keresett tanuló nevét: ");
+            string keresettTanulo = Console.ReadLine();
+            int nevdb = 0;
+            for (int i = 0;i<tomb.Length ; i++)
+            {
+                if (keresettTanulo == tomb[i])
+                {
+                    nevdb++;
+                }
+                
+                
+            }
+            Console.WriteLine($"Ennyi {keresettTanulo} jár az osztályba: {nevdb} ");
+        }
+
+        static void F48()
+        {
+            Console.WriteLine("Add meg a tömb hosszát:");
+            int db = int.Parse(Console.ReadLine());
+            int[] tomb = new int[db];
+            for (int i = 0; i < tomb.Length; i++)
+            {
+                Console.WriteLine("Adj meg egy számot: ");
+                tomb[i] = int.Parse(Console.ReadLine());
+            }
+            int min=tomb[0];
+            int max = 0;
+            for (int i = 0; i < tomb.Length; i++)
+            {
+                if (min > tomb[i])
+                {
+                    min = tomb[i];
+                }
+                if (max < tomb[i])
+                {
+                    max = tomb[i];
+                }
+            }
+            Console.WriteLine($"A legnagyobb és a legkissebb szám különbsége: {max-min}");
+        }
+
+        static void F49()
+        {
+
+        }
         static void Main(string[] args)
         {
-            F40(); 
+            F49(); 
         }
     }
 }
